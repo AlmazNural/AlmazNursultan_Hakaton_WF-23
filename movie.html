@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movi</title>
+    <link rel="stylesheet" href="./css/movie.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="container">
+        <div class="header__content">
+            <a href="index.html" class="header__logo">MovieDB</a>
+            <form>
+                <input type="text" class="header__search" placeholder="Найти">
+            </form>
+        </div>
+    </header>
+    <div class="container">
+        <div class="movies">
+           
+        </div>
+    </div>
+
+        <div class="modal">
+            <div class="modal__card">
+                <img class="modal__movie-backdrop" src="./images/pocemon.webp" alt="">
+                    <h2>
+                      <div class="modal__movie-title"></div>
+                    </h2>
+                    <ul class="modal__movie-info">
+                      <div class="loader"></div>
+                      <li class="modal__movie-genre"> Жанр </li>
+                      <li><a class="modal__movie-release_date"> Дата релиза </a></li>
+                      <li class="modal__movie-overview"> Описание </li>
+                    </ul>
+                    <button type="button" class="modal__button-close">Закрыть</button>
+              </div>
+        </div>
+
+
+
+
+
+    <script src="./js/movie.js"></script>
+</body>
+
+</html>
