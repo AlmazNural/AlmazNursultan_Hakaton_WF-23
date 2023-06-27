@@ -1,0 +1,258 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: bord}
+
+ul {
+    list-style-type: none;
+}
+
+button {
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+}
+
+body {
+    height: 100vh;
+}
+
+header {
+    padding: 15px;
+}
+
+.container {
+    max-width: 1185px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+/* _________style pokemon_________*/
+
+header {
+    background-color: rgb(253, 225, 225);
+    box-shadow: 0 0 30px 3px rgba(255, 219, 219, 0.5);
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 9px;
+    
+}
+
+.btn-header {
+    background-color: rgb(255, 255, 255);
+    padding: 17px;
+    border-radius: 13px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 800;
+    box-shadow: 0 0 15px rgba(0, 0, 0, .30);
+    transition: .2s;
+}
+
+.btn-header:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(0, 0, 0, .35);
+}
+
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pokemon-todos {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+.pokemon {
+    border-radius: 13px;
+    background-color: white;
+    box-shadow: 0 0 20px 15px rgba(252, 216, 216, 0.25);
+    text-transform: uppercase;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+.pokemon-id-back {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 170px;
+    font-weight: 800;
+    z-index: -1;
+    color: rgb(227, 227, 227);
+    font-family: 'Permanent Marker', cursive;
+}
+
+.pokemon-imagen {
+    padding-inline: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.pokemon-imagen img {
+    width: 100%;
+    max-width: 200px;
+}
+
+.pokemon-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-inline: 15px;
+    align-items: center;
+    text-align: center;
+}
+
+.nombre-contenedor {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.pokemon-id {
+    background-color: rgb(183, 183, 183);
+    padding: 10px 10px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: 'Belanosima', sans-serif;
+}
+
+.pokemon-nombre {
+    font-size: 23px;
+    font-family: 'Permanent Marker', cursive;
+}
+
+.pokemon-tipos {
+    display: flex;
+    gap: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-family: 'Belanosima', sans-serif;
+}
+
+.tipo {
+    padding: 5px 7px;
+    border-radius: 13px;
+    
+}
+
+.pokemon-stats {
+    display: flex;
+    gap: 10px;
+    font-size: 12px;
+    font-family: 'Belanosima', sans-serif;
+    padding-bottom: 10px;
+}
+
+.stat {
+    background-color: rgb(235, 247, 130);
+    padding: 10px 10px;
+    border-radius: 13px;
+}
+
+/* _________color_________*/
+.normal {
+    background-color: rgb(228, 226, 226);
+   
+}
+
+.fire {
+    background-color: rgb(255, 140, 0);
+}
+
+.water {
+    background-color: rgb(62, 116, 233);
+    color: (--clr-white);
+}
+
+.grass {
+    background-color: rgb(49, 152, 68);
+}
+
+.electric {
+    background-color: gold;
+}
+
+.ice {
+    background-color: rgb(31, 230, 244);
+}
+
+.fighting {
+    background-color: rgb(159, 59, 59);
+    color: white;
+}
+
+.poison {
+    background-color: rgb(253, 148, 253);
+
+}
+
+.ground {
+    background-color: burlywood;
+}
+
+.flying {
+    background-color: rgb(197, 248, 248);
+}
+
+.psychic {
+    background-color: rgb(151, 65, 151);
+    color: white;
+}
+
+.bug {
+    background-color: rgb(131, 97, 97);
+}
+
+.rock {
+    background-color: rgb(205, 158, 37);
+}
+
+.ghost {
+    background-color: rgb(211, 113, 208);
+}
+
+.dark {
+    background-color: rgb(7, 6, 6);
+    color: white;
+}
+
+.dragon {
+    background-color: rgb(176, 11, 11);
+    color: white;
+}
+
+.steel {
+    background-color: palevioletred;
+}
+
+.fairy {
+    background-color: rgb(239, 185, 84);
+}
+
+@media screen and (min-width: 470px) {
+    .pokemon-todos {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .pokemon-todos {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}

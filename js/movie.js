@@ -2,7 +2,6 @@ const getMovies = async () => {
     let res = await fetch("https://api.themoviedb.org/3/discover/movie?language=ru-RUS&api_key=baacee587b52679e93f67d12424c4cb3")
     let data = await res.json()
     foreachData(data.results)
-    console.log(data);
 }
 getMovies()
 
