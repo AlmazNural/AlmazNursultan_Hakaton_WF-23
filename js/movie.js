@@ -1,3 +1,23 @@
+ let header = document.querySelector("header");
+  let menu = document.querySelector("#menu-icon")
+  let navbar = document.querySelector(".navbar")
+
+
+  window.addEventListener("scroll", () =>{
+    header.classList.toggle('shadow', window.scrollY > 0)
+  });
+
+  menu.onclick = () =>{
+    menu.classList.toggle("bx-x")
+    navbar.classList.toggle("active")
+  }
+
+  window.onscroll = () =>{
+    menu.classList.remove("bx-x")
+    navbar.classList.remove("active")
+  }
+
+
 const getMovies = async () => {
     let res = await fetch("https://api.themoviedb.org/3/discover/movie?language=ru-RUS&api_key=baacee587b52679e93f67d12424c4cb3")
     let data = await res.json()
@@ -25,12 +45,19 @@ const foreachData = (arr) => {
         let release = document.querySelector(".modal__movie-release_date")
         let data = document.createElement('p')
         release.appendChild(data)
-        release.innerText = el.release_date
+        release.innerText = el.original_title
 
         let overview = document.querySelector(".modal__movie-overview")
         let text = document.createElement('p')
         overview.appendChild(text)
         overview.innerText = el.overview
+
+        let card = Array.from(document.querySelectorAll('.movie'))
+
+card.forEach((a) => {
+    a.addEventListener("click", () => openModal(el.id))
+}) 
+
 
 
         const getColor = (color) => {
@@ -49,10 +76,10 @@ const foreachData = (arr) => {
     </div>
     <div class="movie__info">
         <div class="movie__title">${el.title}</div>
-        <div class="movie__category">${el.genre_ids}</div>
+        <div class="movie__category">${el.release_date}</div>
         <div class="movie__average movie__average-${getColor(el.vote_average)}">${el.vote_average}</div>
     </div>`
-        movieEl.addEventListener("click", () => openModal(el.id))
+
     })
 }
 
@@ -60,20 +87,22 @@ const foreachData = (arr) => {
 // _____MODAL______
 
 
-const modalEl = document.querySelector(".modal")
 
+const modalEl = document.querySelector(".modal")
+console.log(modalEl);
 const openModal = async () => {
-    const res = await fetch("https://api.themoviedb.org/3/discover/movie?language=ru-RUS&api_key=baacee587b52679e93f67d12424c4cb3")
-    const respData = await res.json()
+    // const res = await fetch("https://api.themoviedb.org/3/discover/movie?language=ru-RUS&api_key=baacee587b52679e93f67d12424c4cb3")
+    // const respData = await res.json()
 
     modalEl.classList.add("modal--show")
     document.body.classList.add("stop-scrolling")
 
-    respData.innerHTML
+    // respData.innerHTML
 
     const btnClose = document.querySelector(".modal__button-close");
     btnClose.addEventListener("click", () => closeModal());
 }
+
 
 function closeModal() {
     modalEl.classList.remove("modal--show")

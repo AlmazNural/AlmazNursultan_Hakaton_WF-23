@@ -145,11 +145,15 @@ body{
 .content-btn{
 padding: 3.5px;
 border-radius: 20px;
+background-color: #1b1b1b;
+color: #8D6D29;
 }
 
-.s{
+.content-a{
     text-decoration:none;
-    color: black;
+    color:rgb(0, 0, 0);
+    color: #ffffff;
+ 
 }
 
 
