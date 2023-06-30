@@ -25,6 +25,8 @@ body{
     line-height: 1.55;
 }
 
+/* main */
+
 .main-header{
     position: relative;
 }
@@ -222,6 +224,8 @@ color: #8D6D29;
     animation: showcontent 1s ease-in-out 0.6s 1 forwards;
 }
 
+/* showcontent_text */
+
 @keyframes showcontent{
     from{
         opacity: 0;
@@ -248,6 +252,7 @@ color: #8D6D29;
     border-radius: 50px;
     border: 1px solid #555;
     transition: 0.5s;
+    
 }.buttons button:hover{
     background-color: #e7e6d3;
 }

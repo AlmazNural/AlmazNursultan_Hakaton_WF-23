@@ -17,6 +17,7 @@
     navbar.classList.remove("active")
   }
 
+// ________section movies___________
 
 const getMovies = async () => {
     let res = await fetch("https://api.themoviedb.org/3/discover/movie?language=ru-RUS&api_key=baacee587b52679e93f67d12424c4cb3")
@@ -58,8 +59,6 @@ card.forEach((a) => {
     a.addEventListener("click", () => openModal(el.id))
 }) 
 
-
-
         const getColor = (color) => {
             if (color >= 7.7) {
                 return "green"
@@ -69,6 +68,7 @@ card.forEach((a) => {
                 return "red"
             }
         }
+
         movieEl.innerHTML = ` <div class="movie__cover-inner">
         <img src="https://image.tmdb.org/t/p/w500/${el.poster_path}" 
         class="movie__cover">
@@ -83,41 +83,26 @@ card.forEach((a) => {
     })
 }
 
-
-// _____MODAL______
-
-
+// _____modal open______
 
 const modalEl = document.querySelector(".modal")
 console.log(modalEl);
 const openModal = async () => {
-    // const res = await fetch("https://api.themoviedb.org/3/discover/movie?language=ru-RUS&api_key=baacee587b52679e93f67d12424c4cb3")
-    // const respData = await res.json()
-
     modalEl.classList.add("modal--show")
     document.body.classList.add("stop-scrolling")
-
-    // respData.innerHTML
-
     const btnClose = document.querySelector(".modal__button-close");
     btnClose.addEventListener("click", () => closeModal());
 }
-
 
 function closeModal() {
     modalEl.classList.remove("modal--show")
     document.body.classList.remove("stop-scrolling")
 }
 
-window.addEventListener("click", (e) => {
-    console.log(e.target);
-    if (e.target === modalEl) {
+window.addEventListener("click", (el) => {
+    console.log(el.target);
+    if (el.target === modalEl) {
         closeModal()
     }
 })
 
-window.addEventListener("keydown", (e) => {
-    if (e.keyCode === 27) {
-        closeModal()
-    }
-})

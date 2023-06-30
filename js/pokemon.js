@@ -1,8 +1,9 @@
-const pokemon = document.querySelector("#listaPokemon")
+const pokemon = document.querySelector("#listPokemon")
 const btnHeader = document.querySelectorAll(".btn-header")
+// __API pokemon__
 let URL = "https://pokeapi.co/api/v2/pokemon/"
 
-
+// ___async aw___ ____for-fetch_____
 for (let i = 1; i <=151; i++){
     fetch ("https://pokeapi.co/api/v2/pokemon/" + i)
     .then((res) => res.json())
@@ -25,7 +26,7 @@ const monstrPokemon = async(pok) => {
             <p class="pokemon-id">#${pok.id}</p>
             <h2 class="pokemon-nombre">${pok.name}</h2>
         </div>
-        <div class="pokemon-tipos">
+        <div class="pokemon-tips">
         ${tipos}
         </div>
         <div class="pokemon-stats">
@@ -53,15 +54,6 @@ btnHeader.forEach(btn => btn.addEventListener("click", (event) =>{
                     monstrPokemon(data)
                 }
             }
-
         })
     }
 })) 
-
-// for (let i = 1; i <=151; i++){
-    // let res = await fetch (URL + i)
-    // let data = await res.json(data)
-//     .then((res) => res.json())
-//     .then(data => monstrPokemon(data))
-// }
-// monstrPokemon()
